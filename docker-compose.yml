@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  ronin-active-set-bot:
+    build: .
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - VALIDATOR_ADDRESS=${VALIDATOR_ADDRESS}
+      - CHAT_ID=${CHAT_ID}
+    restart: on-failure
+    command: python3 /app/main.py
